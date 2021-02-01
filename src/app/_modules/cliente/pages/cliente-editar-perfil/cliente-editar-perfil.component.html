@@ -1,0 +1,210 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="header text-center">
+      <h3 class="title">Editar Perfil </h3>
+      <!-- <p class="category">
+        </p> -->
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header card-header-rose card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">person</i>
+            </div>
+            <!-- <h4 class="card-title">Editar Cliente</h4> -->
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="onSubmit()" #form="ngForm">
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Nome"
+                  name="nome"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.nome"
+                />
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="E-mail"
+                  name="email"
+                  type="email"
+                  required
+                  [(ngModel)]="cliente.email"
+                />
+              </mat-form-field>
+              
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="CPF"
+                  name="cpf"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.cpf"
+                />
+              </mat-form-field>
+              <div fxLayout="row wrap">
+                <div fxFlex="50" fxFill fxLayoutAlign="start center" class="selectp">
+                    <mat-form-field>
+                        <mat-label>Data de Nascimento</mat-label>
+                        <input matInput [matDatepicker]="picker" name="nascimento" [(ngModel)]="cliente.nascimento">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                </div>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="DDD"
+                  name="ddd"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.telefone.ddd"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="numero"
+                  name="numero"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.telefone.numero"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <mat-select
+                  name="tipoTelefone"  placeholder="Tipo"
+                  [(ngModel)]="cliente.telefone.tipoTelefone"
+                >
+                  <mat-option value="cliente.telefone.tipoTelefone"> Selecione </mat-option>
+                  <mat-option value="1"> Celular </mat-option>
+                  <mat-option value="2"> Fixo </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="CEP"
+                  name="cep"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.endereco.cep"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Cidade"
+                  name="cidade"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.endereco.cidade"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Bairro"
+                  name="bairro"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.endereco.bairro"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Rua"
+                  name="rua"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.endereco.rua"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Número do Endereco"
+                  name="numero"
+                  type="text"
+                  required
+                  [(ngModel)]="cliente.endereco.numero"
+                />
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input
+                  matInput
+                  placeholder="Complemento (Opcional)"
+                  name="complemento"
+                  type="text"
+                  [(ngModel)]="cliente.endereco.complemento"
+                />
+              </mat-form-field>
+
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="Unidade Federal" name="uf" [(ngModel)]="cliente.endereco.uf">
+                  <mat-option value="cliente.endereco.uf">  </mat-option>
+                  <mat-option value="0">Acre</mat-option>
+                  <mat-option value="1">Alagoas</mat-option>
+                  <mat-option value="2">Amazonas</mat-option>
+                  <mat-option value="3">Amapá</mat-option>
+                  <mat-option value="4">Bahia</mat-option>
+                  <mat-option value="5">Ceará</mat-option>
+                  <mat-option value="6">Distrito Federal</mat-option>
+                  <mat-option value="7">Espirito Santo</mat-option>
+                  <mat-option value="8">Goias</mat-option>
+                  <mat-option value="9">Maranhão</mat-option>
+                  <mat-option value="10">Minas Gerais</mat-option>
+                  <mat-option value="11">Mato Grosso Sul</mat-option>
+                  <mat-option value="12">Mato Grosso</mat-option>
+                  <mat-option value="13">Pará</mat-option>
+                  <mat-option value="14">Paraiba</mat-option>
+                  <mat-option value="15">Pernambuco</mat-option>
+                  <mat-option value="16">Piaui</mat-option>
+                  <mat-option value="17">Parana</mat-option>
+                  <mat-option value="18">Rio de Janeiro</mat-option>
+                  <mat-option value="19">Rio Grande do Norte</mat-option>
+                  <mat-option value="20">Rondônia</mat-option>
+                  <mat-option value="21">Roraima</mat-option>
+                  <mat-option value="22">Rio Grande do Sul</mat-option>
+                  <mat-option value="23">Santa Catarina</mat-option>
+                  <mat-option value="24">Sergipe</mat-option>
+                  <mat-option value="25">São Paulo</mat-option>
+                  <mat-option value="26">Tocantins</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <div class="d-flex justify-content-between">
+                <button
+                  routerLink="/cliente/cliente-perfil"
+                  mat-raised-button
+                  type="button"
+                  class="btn btn-fill btn-warning"
+                >
+                  Voltar
+                </button>
+                <button
+                  [disabled]="!form.form.valid"
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-fill btn-rose"
+                >
+                  Atualizar
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

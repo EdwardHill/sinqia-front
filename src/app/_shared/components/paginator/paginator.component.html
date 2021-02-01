@@ -1,0 +1,20 @@
+<div class="card-footer" *ngIf="page.totalElements != 0">
+  <ul *ngIf="page.content" class="pagination" style="cursor: pointer;">
+    <li [ngClass]="{disabled:page.first}" class="page-item first-item">
+      <a class="page-link" (click)="onChangePage(0)">Primeiro</a>
+    </li>
+    <li [ngClass]="{disabled:page.number === 0}" class="page-item previous-item">
+      <a (click)="onChangePage(page.number - 1)" class="page-link">Anterior</a>
+    </li>
+    <li *ngFor="let item of arrayOne(page.totalPages); let i = index" class="page-item number-item"
+      [ngClass]="{active:page.number == i}">
+      <a class="page-link" (click)="onChangePage(i)">{{i + 1}}</a>
+    </li>
+    <li [ngClass]="{disabled:page.last}" class="page-item next-item">
+      <a (click)="onChangePage(page.number + 1)" class="page-link">Próximo</a>
+    </li>
+    <li [ngClass]="{disabled:page.last}" class="page-item last-item">
+      <a (click)="onChangePage(page.totalPages - 1)" class="page-link">Último</a>
+    </li>
+  </ul>
+</div>

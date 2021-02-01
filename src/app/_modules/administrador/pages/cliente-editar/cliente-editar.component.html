@@ -1,0 +1,222 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="header text-center">
+      <h3 class="title">Editar Cliente</h3>
+      <!-- <p class="category">
+        </p> -->
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header card-header-rose card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">person</i>
+            </div>
+            <!-- <h4 class="card-title">Editar Cliente</h4> -->
+          </div>
+                <div class="card-body">
+                  <form (ngSubmit)="onSubmit()" #form="ngForm">
+                   <div fxLayout="row ">
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Nome"
+                        name="nome"
+                        type="text"
+                        required
+                        [(ngModel)]="cliente.nome"
+                      />
+                    </mat-form-field>
+                    
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="E-mail"
+                        name="email"
+                        type="email"
+                        required
+                        [(ngModel)]="cliente.email"
+                      />
+                    </mat-form-field>
+                   
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="CPF"
+                        name="cpf"
+                        type="text"
+                        required
+                        [(ngModel)]="cliente.cpf"
+                      />
+                    </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap">
+                      <div fxFlex="50" fxFill fxLayoutAlign="start center" class="selectp">
+                          <mat-form-field>
+                              <mat-label>Data de Nascimento</mat-label>
+                              <input matInput [matDatepicker]="picker" name="nascimento" [(ngModel)]="cliente.nascimento">
+                              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                              <mat-datepicker #picker></mat-datepicker>
+                          </mat-form-field>
+                      </div>
+                      </div>
+                    
+                    <mat-form-field class="selectl">
+                      <mat-label>Tipo de telefone</mat-label>
+                      <mat-select
+                      
+                        name="tipoTelefone"
+                        [(ngModel)]="cliente.telefone.tipoTelefone"
+                      >
+                        <mat-option value=""> Selecione </mat-option>
+                        <mat-option value="1"> Celular </mat-option>
+                        <mat-option value="2"> Fixo </mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="DDD"
+                        name="ddd"
+                        type="text"
+                        required
+                        [(ngModel)]="cliente.telefone.ddd"
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Número"
+                        name="numeroTelefone"
+                        type="text"
+                        required
+                        [(ngModel)]="cliente.telefone.numero"
+                      />
+                    </mat-form-field>
+      
+                    <mat-form-field class="example-full-width">
+                  
+                      <input
+                      
+                      (blur)='consultaCep($event.target.value,form)' 
+                        matInput
+                        placeholder="CEP"
+                        name="cep"
+                        type="text"
+                        
+                        required
+                        [(ngModel)]="cliente.endereco.cep"
+                       
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Cidade"
+                        name="cidade"
+                       
+                        type="text"
+                      
+                        [(ngModel)]="cliente.endereco.cidade"
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Bairro"
+                        name="bairro"
+                        type="text"
+                       
+                        [(ngModel)]="cliente.endereco.bairro"
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Rua"
+                        name="rua"
+                        type="text"
+                      
+                        [(ngModel)]="cliente.endereco.rua"
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Número do Endereco"
+                        name="numero"
+                        type="text"
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+                        [(ngModel)]="cliente.endereco.numero"
+                      />
+                    </mat-form-field>
+                    <mat-form-field class="example-full-width">
+                      <input
+                        matInput
+                        placeholder="Complemento (Opcional)"
+                        name="complemento"
+                        type="text"
+                        [(ngModel)]="cliente.endereco.complemento"
+                      />
+                    </mat-form-field>
+                   
+                    <mat-form-field class="selectp">
+                      <mat-label>Estado</mat-label>
+                      <mat-select name="uf" [(ngModel)]="cliente.endereco.uf">
+                        <mat-option value=""> Selecione </mat-option>
+                        <mat-option value="0">Acre</mat-option>
+                        <mat-option value="AL">Alagoas</mat-option>
+                        <mat-option value="AM">Amazonas</mat-option>
+                        <mat-option value="AP">Amapá</mat-option>
+                        <mat-option value="BA">Bahia</mat-option>
+                        <mat-option value="CE">Ceará</mat-option>
+                        <mat-option value="DF">Distrito Federal</mat-option>
+                        <mat-option value="ES">Espirito Santo</mat-option>
+                        <mat-option value="GO">Goias</mat-option>
+                        <mat-option value="MA">Maranhão</mat-option>
+                        <mat-option value="MG">Minas Gerais</mat-option>
+                        <mat-option value="MS">Mato Grosso Sul</mat-option>
+                        <mat-option value="MT">Mato Grosso</mat-option>
+                        <mat-option value="PA">Pará</mat-option>
+                        <mat-option value="PB">Paraiba</mat-option>
+                        <mat-option value="PE">Pernambuco</mat-option>
+                        <mat-option value="PI">Piaui</mat-option>
+                        <mat-option value="PR">Parana</mat-option>
+                        <mat-option value="RJ">Rio de Janeiro</mat-option>
+                        <mat-option value="RN">Rio Grande do Norte</mat-option>
+                        <mat-option value="RO">Rondônia</mat-option>
+                        <mat-option value="RR'">Roraima</mat-option>
+                        <mat-option value="RS">Rio Grande do Sul</mat-option>
+                        <mat-option value="SC">Santa Catarina</mat-option>
+                        <mat-option value="SE">Sergipe</mat-option>
+                        <mat-option value="SP">São Paulo</mat-option>
+                        <mat-option value="TO">Tocantins</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+
+              <div class="d-flex justify-content-between">
+                <button
+                  routerLink="/administrador/cliente-listar"
+                  mat-raised-button
+                  type="button"
+                  class="btn btn-fill btn-warning"
+                >
+                  Voltar
+                </button>
+                <button
+                  [disabled]="!form.form.valid"
+                  mat-raised-button
+                  type="submit"
+                  class="btn btn-fill btn-rose"
+                >
+                  Atualizar
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

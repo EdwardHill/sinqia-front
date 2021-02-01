@@ -1,0 +1,43 @@
+.tela-grande {
+  /*background-image: url('/assets/img/background.png');*/
+  height: 100vh;
+  background-size: cover;
+}
+
+@media only screen and (max-width: 600px) {
+  .tela-pequena {
+    background-color: #005c8a;
+    background-image: linear-gradient(#005c8a, #39739d) !important;
+  }
+}
+
+/*.button-box {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  border-radius: 30px;
+}*/
+
+.button-box {
+  width: 240px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #8f0d0d80;
+  border-radius: 30px;
+}
+
+.toggle-btn {
+  padding: 10px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+}
+.active {
+  background: linear-gradient(to right, #cecbcc, #ffad06);
+  border-radius: 30px;
+  transition: 0.5s;
+  margin-right: 18px;
+}
