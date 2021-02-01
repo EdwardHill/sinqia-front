@@ -11,7 +11,6 @@ import { FormsRoutes } from './forms.routing';
 import { ExtendedFormsComponent } from './extendedforms/extendedforms.component';
 import { RegularFormsComponent } from './regularforms/regularforms.component';
 import { ValidationFormsComponent } from './validationforms/validationforms.component';
-import { WizardComponent } from './wizard/wizard.component';
 import { FieldErrorDisplayComponent } from './validationforms/field-error-display/field-error-display.component';
 
 
@@ -29,7 +28,6 @@ import { FieldErrorDisplayComponent } from './validationforms/field-error-displa
       ExtendedFormsComponent,
       RegularFormsComponent,
       ValidationFormsComponent,
-      WizardComponent,
       FieldErrorDisplayComponent
   ]
 })

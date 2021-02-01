@@ -12,9 +12,9 @@ import { ClienteService } from '../../services/cliente.service';
 })
 export class ClienteListarComponent implements OnInit {
 
-  idDoSetor = -1;
+  idDoCliente = -1;
   c = 0;
-  setores: Cliente[];
+  clientes: Cliente[];
   clientesPage: Page<Cliente>;
 
   constructor(
@@ -25,16 +25,16 @@ export class ClienteListarComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.findAllSetores();
+    this.findAllClientes();
    /* this.findBySetor(this.idDoSetor, 0).subscribe(clientesPage => {
       this.clientesPage = clientesPage;
     });*/
   }
 
-  findAllSetores() {
-    this.service.findAll().subscribe(setores => {
-      this.c = setores.length;
-      this.setores = setores;
+  findAllClientes() {
+    this.service.findAll().subscribe(clientes => {
+      this.c = clientes.length;
+      this.clientes = clientes;
     });
   }
 
@@ -50,21 +50,6 @@ export class ClienteListarComponent implements OnInit {
     }
   }
 
-  findBySetor(id: number, pageNumber: number) {
-    return this.service.findAllBySetor(id, pageNumber);
-  }
-
-  selecionarSetor() {
-    this.service.findAllBySetor(this.idDoSetor, 0).subscribe(clientesPage => {
-      this.clientesPage = clientesPage;
-    });
-  }
-
-  onChangePage(pageNumber: number) {
-    this.findBySetor(this.idDoSetor, pageNumber).subscribe(clientesPage => {
-      this.clientesPage = clientesPage;
-    });
-  }
 
   editar(id: number) {
     this.router.navigate(['administrador/cliente-editar/', id]);

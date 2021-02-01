@@ -9,34 +9,7 @@ import { AdminPerfilComponent } from './pages/admin-perfil/admin-perfil.componen
 
 
 const routes: Routes = [
-  /*{
-    path: 'setor-do-vendedor-listar', component: SetorDoVendedorListarComponent,
-  },
-  {
-    path: 'setor-do-vendedor-cadastrar', component: SetorDoVendedorCadastrarComponent,
-  },
-  {
-    path: 'setor-do-vendedor-editar/:id', component: SetorDoVendedorEditarComponent ,
-  },*/
- /* {
-    path: 'vendedor-listar', component: VendedorListarComponent ,
-  },
-  {
-    path: 'vendedor-cadastrar', component: VendedorCadastrarComponent ,
-  },
-  {
-    path: 'vendedor-editar/:id', component: VendedorEditarComponent ,
-  },
-*/
-  /*{
-    path: 'setor-do-cliente-listar', component: SetorDoClienteListarComponent ,
-  },
-  {
-    path: 'setor-do-cliente-editar/:id', component: SetorDoClienteEditarComponent ,
-  },
-  {
-    path: 'setor-do-cliente-cadastrar', component: SetorDoClienteCadastrarComponent,
-  },*/
+  
   {
     path: 'cliente-listar', component: ClienteListarComponent,
   },
@@ -46,25 +19,11 @@ const routes: Routes = [
   {
     path: 'cliente-editar/:id', component: ClienteEditarComponent,
   },
- /*
-  {
-    path: 'produto-listar', component: ProdutoListarComponent,
-  },
-  {
-    path: 'produto-detalhes/:id', component: ProdutoDetalhesComponent,
-  },
-  */
+ 
   {
     path: 'admin-perfil/:id', component: AdminPerfilComponent,
   },
-  /*
-  {
-    path: '', redirectTo: 'vendedor-listar', pathMatch: 'full'
-  },
-  {
-    path: '**', redirectTo: 'vendedor-listar', pathMatch: 'full'
-  }
-  */
+  
 ]
 ;
 

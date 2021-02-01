@@ -5,6 +5,7 @@ import { ClienteService } from '../../services/cliente.service';
 import { ActivatedRoute } from '@angular/router';
 import { ShowMessagesService } from 'src/app/_shared/services/show-messages.service';
 import { CepServiceService } from '../../services/cep-service.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-cliente-editar',
@@ -17,6 +18,7 @@ export class ClienteEditarComponent implements OnInit {
 
 
   constructor(
+    private http: HttpClient,
     private service: ClienteService,
     private route: ActivatedRoute,
     private location: Location,

@@ -1,6 +1,5 @@
 import { ErrorInterceptorService } from './_modules/auth/services/error-interceptor.service';
 import { AuthGuard } from './_modules/auth/services/auth.guard';
-import { InMemoryApisService } from './_shared/mocks/services/in-memory-apis.service';
 import { SharedModule } from './_shared/shared.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -55,7 +54,6 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 import { AppRoutes } from './app.routing';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { AuthModule } from './_modules/auth/auth.module';
 import { AuthInterceptor } from './_modules/auth/services/auth-interceptor.service';
 import { SatDatepickerModule, SatNativeDateModule, MAT_DATE_LOCALE as MAT_DATE_LOCALE_SATURN } from 'saturn-datepicker';
@@ -119,7 +117,6 @@ export class MaterialModule { }
     SatDatepickerModule,
     SatNativeDateModule,
     NgxSpinnerModule,
-    // InMemoryWebApiModule.forRoot(InMemoryApisService)
   ],
   declarations: [
     AppComponent,

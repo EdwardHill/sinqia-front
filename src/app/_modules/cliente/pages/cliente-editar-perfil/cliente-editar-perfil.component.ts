@@ -5,6 +5,8 @@ import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { ShowMessagesService } from 'src/app/_shared/services/show-messages.service';
 import { ClienteService } from 'src/app/_modules/cliente/services/cliente.service';
+import { CepServiceService } from '../../services/cep-service.service';
+
 
 @Component({
   selector: 'app-cliente-editar-perfil',
@@ -20,12 +22,25 @@ export class ClienteEditarPerfilComponent implements OnInit {
     private service: ClienteService,
     private route: ActivatedRoute,
     private location: Location,
-    private showMessageService: ShowMessagesService
+    private showMessageService: ShowMessagesService,
+    private cepService:CepServiceService
   ) { }
 
-  ngOnInit() {
-    //const id = +this.route.snapshot.paramMap.get('id');
 
+  consultaCep(valor, form){
+    this.cepService.buscar(valor).subscribe((dados)=> this.populaForm(dados,form));
+}
+
+populaForm(dados, form){ 
+    form.form.patchValue({
+        cidade : dados.localidade,
+        rua: dados.logradouro,
+        bairro : dados.bairro,
+        uf:dados.uf
+    });
+    
+}
+  ngOnInit() {
     this.findByMyself().subscribe(cliente => {
       this.cliente = cliente;
     }, err => {
@@ -40,8 +55,6 @@ export class ClienteEditarPerfilComponent implements OnInit {
   }
 
   update(cliente: Cliente) {
-   
-
     this.service.update(cliente).subscribe(x => {
       this.showMessageService.showNotification('Cliente atualizado com sucesso');
       localStorage.removeItem('cliente/self');

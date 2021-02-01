@@ -13,9 +13,13 @@ export class ClienteService {
     private http: HttpClient
   ) { }
 
+  /*
   findAllBySetor(id: number, pageNumber: number) {
     return this.http.get<Page<Cliente>>(Endpoints.CLIENTE + id + '/cliente?page=' + pageNumber);
   }
+ */
+
+
   findAll() {
     return this.http.get<Cliente[]>(Endpoints.CLIENTE);
   }

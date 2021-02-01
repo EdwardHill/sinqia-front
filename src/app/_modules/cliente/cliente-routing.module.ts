@@ -5,14 +5,25 @@ import { ClienteEditarPerfilComponent } from './pages/cliente-editar-perfil/clie
 import {ClientePerfilComponent} from './pages/cliente-perfil/cliente-perfil.component';
 const routes: Routes = [
   
-  
   {
-    path: 'cliente-editar-perfil/', component: ClienteEditarPerfilComponent,
+    path: 'cliente-editar-perfil/:id', 
+    component: ClienteEditarPerfilComponent,
   },
 
   {
-    path: 'cliente-perfil/', component: ClientePerfilComponent,
+    path: 'cliente-perfil/:id', 
+    component: ClientePerfilComponent,
   },
+  {
+    path: '',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
