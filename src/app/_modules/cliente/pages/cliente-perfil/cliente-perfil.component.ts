@@ -91,7 +91,7 @@ export class ClientePerfilComponent implements OnInit {
       console.log(cliente);
     this.service.update(cliente).subscribe(x => {
       this.showMessageService.showNotification('Perfil atualizado com sucesso');
-      this.location.back();
+      window.location.reload();
     }, err => {
       this.showMessageService.showNotification(err.error.msg, 'danger');
     });
