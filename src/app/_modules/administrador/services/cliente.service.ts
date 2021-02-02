@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Cliente } from 'src/app/_shared/model/cliente.model';
 import { Endpoints } from 'src/app/_config/endpoints';
-import { Page } from 'src/app/_shared/model/page.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +12,6 @@ export class ClienteService {
   constructor(
     private http: HttpClient
   ) { }
-
-  /*
-  findAllBySetor(id: number, pageNumber: number) {
-    return this.http.get<Page<Cliente>>(Endpoints.CLIENTE + id + '/cliente?page=' + pageNumber);
-  }
- */
-
 
   findAll() {
     return this.http.get<Cliente[]>(Endpoints.CLIENTE);

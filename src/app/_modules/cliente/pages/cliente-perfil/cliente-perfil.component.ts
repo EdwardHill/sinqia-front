@@ -18,7 +18,9 @@ import { CepServiceService } from '../../services/cep-service.service';
 })
 export class ClientePerfilComponent implements OnInit {
 
-        cliente: Cliente;
+      
+    cliente: Cliente ;
+
         perfilDoUsuario: string;
         setorDoUsuario: string;
         nomeDoUsuario: string;
@@ -50,8 +52,6 @@ export class ClientePerfilComponent implements OnInit {
         }
     ngOnInit() {
         this.getUsuarioInfos();
-
-        const id = +this.route.snapshot.paramMap.get('id');
         this.findByMyself().subscribe(cliente => {
             this.cliente = cliente;
         },
@@ -87,9 +87,11 @@ export class ClientePerfilComponent implements OnInit {
   }
 
   update(cliente: Cliente) {
+    cliente.cpf=null;
+      console.log(cliente);
     this.service.update(cliente).subscribe(x => {
       this.showMessageService.showNotification('Perfil atualizado com sucesso');
-        window.location.reload();
+      this.location.back();
     }, err => {
       this.showMessageService.showNotification(err.error.msg, 'danger');
     });

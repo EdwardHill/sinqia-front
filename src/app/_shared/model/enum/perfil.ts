@@ -7,7 +7,7 @@ export class Perfil {
 
    
     public static CLIENTE: Opcao = {
-        id:3,
+        id:2,
         valor: 'ROLE_CLIENTE',
         descricao: 'Cliente'
     };

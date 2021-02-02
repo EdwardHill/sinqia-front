@@ -56,11 +56,8 @@ populaForm(dados, form){
   }
 
   update(cliente: Cliente) {
-   
-
     this.service.update(cliente).subscribe(x => {
       this.showMessageService.showNotification('Cliente atualizado com sucesso');
-      localStorage.removeItem('admin/setor-do-cliente-id');
       this.location.back();
     }, err => {
       this.showMessageService.showNotification(err.error.msg, 'danger');
