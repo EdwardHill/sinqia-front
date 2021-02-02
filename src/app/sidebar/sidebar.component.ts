@@ -39,10 +39,7 @@ export const ROUTES: RouteInfo[] = [
         icontype: 'apps',
         collapse: 'administrador',
         children: [
-            { path: 'setor-do-cliente-listar', title: 'Setores dos Clientes', ab: 'S' },
-            // {path: 'cliente-listar', title: 'Clientes', ab:'C'},
-            { path: 'setor-do-vendedor-listar', title: 'Setores dos Vendedores', ab: 'B' },
-            { path: 'vendedor-listar', title: 'Vendedores', ab: 'O' },
+             {path: 'cliente-listar', title: 'Clientess', ab:'C'},
         ]
     },
     {

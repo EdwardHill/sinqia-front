@@ -58,7 +58,7 @@ populaForm(dados, form){
   update(cliente: Cliente) {
     this.service.update(cliente).subscribe(x => {
       this.showMessageService.showNotification('Cliente atualizado com sucesso');
-      this.location.back();
+    window.location.reload();
     }, err => {
       this.showMessageService.showNotification(err.error.msg, 'danger');
     });
